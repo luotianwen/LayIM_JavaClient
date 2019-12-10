@@ -43,11 +43,11 @@ public class LayIMService extends HttpServlet {
         JsonResult result = new JsonResult();
         switch (action) {
             case RequestAction.BASE:
-                result = dao.getBaseList(userIdInt);
+                //result = dao.getBaseList(userIdInt);
                 break;
             case RequestAction.MEMBER:
-                int groupId =Integer.parseInt(request.getParameter("id"));
-                result = dao.getMemberList(groupId);
+                /*int groupId =Integer.parseInt(request.getParameter("id"));
+                result = dao.getMemberList(groupId);*/
                 break;
             default:
                 break;

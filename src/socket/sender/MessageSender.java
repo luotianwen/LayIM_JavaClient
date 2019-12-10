@@ -53,7 +53,7 @@ public class MessageSender {
         }
 
         //最后保存到数据库
-        saveMessage(message);
+        //saveMessage(message);
 
     }
 

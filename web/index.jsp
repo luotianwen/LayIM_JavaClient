@@ -19,11 +19,11 @@
 </div>
 
 <script>
-
+    var uid = '${param.uid}';
     var socket = null;
     var im = {
         getUid:function () {
-          var uid = '${param.uid}';
+
             return uid;
         },
         init:function(){
@@ -94,12 +94,21 @@
 
     //基础配置
     layim.config({
+        init: {
 
-      //初始化接口
+            mine: {
+                "username": "游客:"+uid
+                ,"id": uid
+                ,"status": "online"
+                ,"sign": "商城客服"
+                ,"avatar": "default.jpg"
+            }
+        }
+     /* //初始化接口
       init: {
           url: '/layim/api?action=base'
           , data: {id: im.getUid()}
-      }
+      }*/
 
       //简约模式（不显示主面板）
       //,brief: true
@@ -127,20 +136,20 @@
       //,copyright: true //是否授权
     });
 
-    /*
+
      layim.chat({
-     name: '在线客服-小苍'
+     name: '在线客服'+uid
      ,type: 'kefu'
-     ,avatar: 'http://tva3.sinaimg.cn/crop.0.0.180.180.180/7f5f6861jw1e8qgp5bmzyj2050050aa8.jpg'
-     ,id: -1
+     ,avatar: 'default.jpg'
+     ,id: 3
      });
-     layim.chat({
-     name: '在线客服-心心'
-     ,type: 'kefu'
-     ,avatar: 'http://tva1.sinaimg.cn/crop.219.144.555.555.180/0068iARejw8esk724mra6j30rs0rstap.jpg'
-     ,id: -2
-     });
-     */
+      /*layim.chat({
+      name: '在线客服-心心'
+      ,type: 'kefu'
+      ,avatar: 'http://tva1.sinaimg.cn/crop.219.144.555.555.180/0068iARejw8esk724mra6j30rs0rstap.jpg'
+      ,id: -2
+      });
+      */
     //layim.setChatMin();
 
     //监听发送消息
